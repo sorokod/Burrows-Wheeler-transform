@@ -9,12 +9,12 @@ public class Encoder {
         return encode(chars, '\u0000');
     }
 
-    public String encode(CharSequence chars, char terminator) {
+    public String encode(CharSequence chars, char eof) {
         final StringBuilder result = new StringBuilder(chars.length());
 
         for (Integer i : generateSuffixArray(chars)) {
             int ii = i.intValue();
-            result.append(ii == 0 ? terminator : chars.charAt(ii - 1));
+            result.append(ii == 0 ? eof : chars.charAt(ii - 1));
         }
 
         return result.toString();

@@ -35,7 +35,7 @@ public class RoundtripTest {
 
 
     private void assertEncodeDecode(String str, char terminator) {
-        assertEquals(str, decoder.decode(encoder.encode(str, terminator), terminator));
+        assertEquals(str.substring(0, str.length()-1), decoder.decode(encoder.encode(str, terminator)));
     }
 
 
