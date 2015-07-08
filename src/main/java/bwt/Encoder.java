@@ -5,11 +5,12 @@ import java.util.Comparator;
 
 public class Encoder {
 
-    public String encode(CharSequence chars) {
-        return encode(chars, '\u0000');
-    }
+//    public String encode(CharSequence chars) {
+//        return encode(chars, '\u0000');
+//    }
 
-    public String encode(CharSequence chars, char eof) {
+    public String encode(CharSequence chars) {
+        char eof = chars.charAt(chars.length() - 1);
         final StringBuilder result = new StringBuilder(chars.length());
 
         for (Integer i : generateSuffixArray(chars)) {
